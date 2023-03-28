@@ -54,11 +54,11 @@ function App() {
   return (
     <div className="App">
       <div className='flex justify-between'>
-        <h1>Cette application est un PWA (une application web progessive) </h1>
+        <h3>Cette application est un PWA (une application web progessive) </h3>
         <button onClick={() => download()}>install PWA</button>
       </div>
       <div>
-        <h1>Liste des fonctionnalités (pas axhaustive, manque de temps pour tout lister mais voilà un peu l'idée)</h1>
+        <h3 className='mb-4'>Liste des fonctionnalités (pas axhaustive, manque de temps pour tout lister mais voilà un peu l'idée)</h3>
         <ul>
           {features.map((name, index) => (
             <li key={index}>{name}</li>
