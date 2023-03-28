@@ -18,7 +18,7 @@ async function download() {
 }
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [nav, setNav] = useState(false)
   const [features, setFeatures] = useState([])
 
 
@@ -39,14 +39,19 @@ function App() {
 
     const featuresList = [];
 
+    if (isApple) {
+      featuresList.push('Vous etes sur un produit apple donc utiliser Safari pour pouvoir installer l\'application');
+    } else {
+      featuresList.push('Vous etes sur un produit qui n\'est pas apple donc utiliser Chrome pour pouvoir installer l\'application');
+    }
+
     if (isMobile) featuresList.push('Installation sur l\'écran d\'accueil à l\'aide du boutton en haut à droite');
     if (isStandalone) featuresList.push('Mode plein écran');
     if (isPushSupported) featuresList.push('Notifications push');
-    if (isApple) {
+    if (isMobile && !isApple) {
       featuresList.push('Des vibration de votre appareil');
       featuresList.push('Acceder aux contact de l\'appareil');
     }
-
     setFeatures(featuresList);
 
   })
